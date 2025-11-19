@@ -6,7 +6,7 @@ body,
 }
 
 body {
-  background-image: url('PHM2.png');
+  background-image: url('../public/PHM2.png');
   margin: 0;
   background-size: cover;
   background-position: center;
