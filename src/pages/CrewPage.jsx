@@ -5,7 +5,7 @@ const crewMembers = [
     id: 4,
     name: 'Ryland Grace',
     role: 'Payload Specialist',
-    image: 'public/CastImages/Ryland.PNG',
+    image: '/CastImages/Ryland.PNG',
     blurb:
       'Loves Breakfast. \nFrom San Francisco (possible ties to Liberia). \nThinks in Imperial Units.',
   },
@@ -13,7 +13,7 @@ const crewMembers = [
     id: 3,
     name: 'Eva Stratt',
     role: 'Mission Director',
-    image: 'public/CastImages/EvaStratt.PNG',
+    image: '/CastImages/EvaStratt.PNG',
     blurb: 'Oversees experiments and mission payload operations.',
   },
 
@@ -21,14 +21,14 @@ const crewMembers = [
     id: 1,
     name: 'Olesya Ilyukhina',
     role: 'Flight Engineer',
-    image: 'public/CastImages/1.PNG',
+    image: '/CastImages/1.PNG',
     blurb: 'Responsible for overall mission success and crew safety.',
   },
   {
     id: 2,
     name: 'Yáo Li-Jie',
     role: 'Mission Commander',
-    image: 'public/CastImages/2.PNG',
+    image: '/CastImages/2.PNG',
     blurb: 'Monitors spacecraft systems and keeps everything running smoothly.',
   },
   // add more crew here as you add images
