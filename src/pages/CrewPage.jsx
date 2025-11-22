@@ -40,11 +40,21 @@ const CrewPageWrapper = styled.main`
 
   font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cccc @media (max-width: 480px) {
+    padding: 300px 24px 32px;
+    min-height: 100vh; /* take the full viewport height */
+    padding: 96px 16px 32px; /* still clear the header, but less huge */
+    justify-content: center; /* <-- vertical centering on mobile */
+  }
 `;
 
 const CrewTitle = styled.h1`
   font-size: 1.6rem;
   margin-bottom: 16px;
+  color: white;
 `;
 
 const CrewList = styled.ul`
@@ -55,15 +65,47 @@ const CrewList = styled.ul`
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
+
+  @media (max-width: 480px) {
+    flex-direction: column; /* stack items */
+    align-items: center; /* center horizontally */
+  }
 `;
 
 const CrewItem = styled.li`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 280px; /* tweak as you like */
+  width: 280px;
   text-align: center;
-  color: white; /* make sure the children inherit */
+  color: white;
+
+  @media (max-width: 480px) {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  /* separator under each item except last */
+  &::after {
+    content: '';
+    display: block;
+    margin: 18px auto 0;
+    width: 80%;
+    height: 2px; /* thicker line */
+
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgba(253, 231, 108, 0.95),
+      /* soft yellow */ transparent
+    );
+
+    box-shadow: 0 0 10px rgba(253, 231, 108, 0.7);
+  }
+
+  &:last-child::after {
+    display: none;
+  }
 `;
 
 const CrewPhoto = styled.img`

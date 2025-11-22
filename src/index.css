@@ -38,29 +38,12 @@ body {
   white-space: nowrap;
 }
 
-@media (max-width: 480px) {
-  .countdown-text {
-    font-size: 2rem;
-    letter-spacing: 0.04em;
-  }
-
-  .countdown-strip {
-    padding: 0.8rem 1.4rem; /* can get rid of this most likely */
-  }
-
-  body {
-    background-size: 200%;
-    background-position: top left;
-    background-repeat: no-repeat;
-    background-color: #000;
-  }
-}
 .app {
   position: relative;
   min-height: 100vh;
 }
 
-/* Header container fixed in upper-right */
+/* Base header for all screens */
 .app-header {
   position: fixed;
   top: 24px;
@@ -146,66 +129,36 @@ body {
   text-decoration: underline;
 }
 
-.crew-view {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+/* Mobile overrides come AFTER base styles */
+@media (max-width: 480px) {
+  .countdown-text {
+    font-size: 1.6rem;
+    letter-spacing: 0.04em;
+  }
 
-.crew-rocket {
-  max-width: 40vw;
-  max-height: 40vh;
-}
+  .countdown-strip {
+    padding: 0.8rem 1.4rem;
+  }
 
-.crew-page {
-  min-height: 100vh;
-  padding: 96px 24px 32px; /* padding top so it clears the header */
-}
+  body {
+    background-size: 200%;
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-color: #000;
+  }
 
-.crew-title {
-  font-size: 1.6rem;
-  margin-bottom: 16px;
-}
+  .app-header {
+    right: 20px;
+    top: 12px;
+  }
 
-.crew-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.crew-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  margin-bottom: 16px;
-}
-
-.crew-photo {
-  width: 72px;
-  height: 72px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-.crew-info {
-  max-width: 420px;
-}
-
-.crew-name {
-  margin: 0;
-  font-size: 1rem;
-  font-weight: 600;
-}
-
-.crew-role {
-  margin: 2px 0 6px;
-  font-size: 0.85rem;
-  opacity: 0.8;
-}
-
-.crew-blurb {
-  margin: 0;
-  font-size: 0.9rem;
-  line-height: 1.4;
+  .nav-panel {
+    right: 0px;
+    width: 80px;
+    padding: 12px 18px;
+    font-size: 0.5rem; /* or 14px, etc */
+  }
+  .nav-list a {
+    font-size: 0.7rem; /* smaller link text */
+  }
 }
