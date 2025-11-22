@@ -156,9 +156,8 @@ body {
     right: 0px;
     width: 100px;
     padding: 12px 18px;
-    font-size: 0.5rem; /* or 14px, etc */
   }
   .nav-list a {
-    font-size: 0.7rem; /* smaller link text */
+    font-size: 0.8rem; /* smaller link text */
   }
 }
