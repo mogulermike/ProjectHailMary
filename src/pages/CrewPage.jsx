@@ -109,8 +109,8 @@ const CrewItem = styled.li`
 `;
 
 const CrewPhoto = styled.img`
-  width: 140px;
-  height: 140px;
+  width: 180px;
+  height: 180px;
   object-fit: cover;
   border-radius: 12px;
   margin-bottom: 8px;
