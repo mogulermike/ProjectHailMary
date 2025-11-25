@@ -36,7 +36,7 @@ const crewMembers = [
 
 const CrewPageWrapper = styled.main`
   min-height: 40vh;
-  padding: 180px 24px 32px; /* enough top padding to clear the fixed header */
+  padding: 80px 24px 32px; /* enough top padding to clear the fixed header */
 
   font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, Helvetica, Arial, sans-serif;
@@ -45,16 +45,22 @@ const CrewPageWrapper = styled.main`
   align-items: center;
   cccc @media (max-width: 480px) {
     padding: 300px 24px 32px;
-    min-height: 100vh; /* take the full viewport height */
-    padding: 96px 16px 32px; /* still clear the header, but less huge */
-    justify-content: center; /* <-- vertical centering on mobile */
+    min-height: 100vh;
+    padding: 96px 16px 32px;
+    justify-content: center;
   }
 `;
 
 const CrewTitle = styled.h1`
-  font-size: 1.6rem;
-  margin-bottom: 16px;
+  font-size: 3rem;
+  margin-bottom: 100px;
   color: white;
+
+  @media (max-width: 480px) {
+    font-size: 1.4rem;
+    margin-top: 100px;
+    margin-bottom: 60px;
+  }
 `;
 
 const CrewList = styled.ul`
@@ -67,8 +73,8 @@ const CrewList = styled.ul`
   gap: 24px;
 
   @media (max-width: 480px) {
-    flex-direction: column; /* stack items */
-    align-items: center; /* center horizontally */
+    flex-direction: column;
+    align-items: center;
   }
 `;
 
@@ -85,27 +91,27 @@ const CrewItem = styled.li`
     max-width: 280px;
   }
 
-  /* separator under each item except last */
-  &::after {
-    content: '';
-    display: block;
-    margin: 18px auto 0;
-    width: 80%;
-    height: 2px; /* thicker line */
+  //   /* separator under each item except last */
+  //   &::after {
+  //     content: '';
+  //     display: block;
+  //     margin: 18px auto 0;
+  //     width: 80%;
+  //     height: 2px; /* thicker line */
 
-    background: linear-gradient(
-      to right,
-      transparent,
-      rgba(253, 231, 108, 0.95),
-      /* soft yellow */ transparent
-    );
+  //     background: linear-gradient(
+  //       to right,
+  //       transparent,
+  //       rgba(253, 231, 108, 0.95),
+  //       /* soft yellow */ transparent
+  //     );
 
-    box-shadow: 0 0 10px rgba(253, 231, 108, 0.7);
-  }
+  //     box-shadow: 0 0 10px rgba(253, 231, 108, 0.7);
+  //   }
 
-  &:last-child::after {
-    display: none;
-  }
+  //   &:last-child::after {
+  //     display: none;
+  //   }
 `;
 
 const CrewPhoto = styled.img`

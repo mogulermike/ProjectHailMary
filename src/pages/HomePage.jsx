@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 
 // March 20, 2026 @ midnight (local time)
-const targetDate = new Date('2026-03-20T00:00:00');
+const targetDate = new Date('2026-03-20T08:00:00');
 
 const secondsPerMinute = 60;
 const secondsPerHour = 60 * secondsPerMinute;

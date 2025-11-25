@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import CrewPage from './pages/CrewPage';
+import AboutPage from './pages/AboutPage';
 
 export default function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -62,17 +63,16 @@ export default function App() {
                   Meet The Crew
                 </Link>
               </li>
-              {/* Add these back later when you have pages */}
               {/* <li>
-                <Link to="/timeline" onClick={closePanel}>
+                <Link to='/timeline' onClick={closePanel}>
                   Timeline
                 </Link>
-              </li>
-              <li>
-                <Link to="/about" onClick={closePanel}>
-                  About
-                </Link>
               </li> */}
+              <li>
+                <Link to='/aboutme' onClick={closePanel}>
+                  About Me
+                </Link>
+              </li>
             </ul>
           </nav>
         </aside>
@@ -82,6 +82,7 @@ export default function App() {
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/crew' element={<CrewPage />} />
+        <Route path='/aboutme' element={<AboutPage />} />
       </Routes>
     </div>
   );
