@@ -29,7 +29,7 @@ body {
 }
 
 .countdown-text {
-  font-size: clamp(3.5rem, 9vw, 5.5rem);
+  font-size: clamp(3.5rem, 9vw, 6.5rem);
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: none;
@@ -46,8 +46,8 @@ body {
 /* Base header for all screens */
 .app-header {
   position: fixed;
-  top: 24px;
-  right: 80px;
+  top: 34px;
+  right: 90px;
   z-index: 1100;
 }
 
@@ -64,8 +64,8 @@ body {
 
 /* Base icon: white */
 .app-header-icon img {
-  width: 32px;
-  height: 32px;
+  width: 50px;
+  height: 50px;
   display: block;
   filter: brightness(0) invert(1);
   transition: filter 0.15s ease;
@@ -82,7 +82,7 @@ body {
 .nav-panel {
   position: absolute;
   top: 100%;
-  right: -50px;
+  right: -38px;
   margin-top: 8px;
 
   background: #fde76c;

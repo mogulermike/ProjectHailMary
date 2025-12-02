@@ -13,7 +13,7 @@ const AboutPageWrapper = styled.main`
 `;
 
 const AboutCard = styled.section`
-  max-width: 760px;
+  max-width: 840px;
   width: 100%;
   color: white;
   text-align: left;
@@ -33,7 +33,7 @@ const AboutCard = styled.section`
 
 const Greeting = styled.p`
   margin: 0 0 4px;
-  font-size: 0.9rem;
+  font-size: 2rem;
   display: flex;
   justify-content: center;
   width: 100%;
@@ -42,7 +42,7 @@ const Greeting = styled.p`
 
 const AboutTitle = styled.h1`
   margin: 0;
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 700;
   display: flex;
   justify-content: center;
@@ -58,7 +58,7 @@ const Handle = styled.p`
 
 const Paragraph = styled.p`
   margin: 0 0 12px;
-  font-size: 0.98rem;
+  font-size: 1.2rem;
   line-height: 1.6;
   opacity: 0.92;
 `;
@@ -66,26 +66,27 @@ const Paragraph = styled.p`
 const QuoteBlock = styled.figure`
   margin: 24px auto 0;
   padding: 12px 16px;
-  max-width: 300px;
+  max-width: 400px;
   border-left: 3px solid rgba(253, 231, 108, 0.9);
   background: rgba(0, 0, 0, 0.35);
   border-radius: 10px;
   text-align: left;
 
   /* Shift it 15px left relative to its centered position */
-  transform: translateX(-15px);
+  transform: translateX(32px);
 `;
 
 const QuoteText = styled.blockquote`
   margin: 0 0 6px;
-  font-size: 0.9rem;
+  font-size: 1.8rem;
   line-height: 1.5;
   font-style: italic;
 `;
 
 const QuoteAuthor = styled.figcaption`
-  font-size: 0.8rem;
+  font-size: 1rem;
   opacity: 0.8;
+  text-align: right;
 `;
 
 export default function AboutPage() {
@@ -128,7 +129,11 @@ export default function AboutPage() {
         </Handle>
 
         <QuoteBlock>
-          <QuoteText>“The creative adult is the child who survived.”</QuoteText>
+          <QuoteText>
+            “The creative adult
+            <br />
+            is the child who survived.”
+          </QuoteText>
           <QuoteAuthor>― Ursula K. Le Guin</QuoteAuthor>
         </QuoteBlock>
       </AboutCard>
