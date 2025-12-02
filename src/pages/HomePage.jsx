@@ -1,5 +1,6 @@
 // src/pages/HomePage.jsx
 import { useState, useEffect } from 'react';
+import BenchScene from '../pages/BenchScene';
 
 // March 20, 2026 @ midnight (local time)
 const targetDate = new Date('2026-03-20T08:00:00');
@@ -45,8 +46,13 @@ export default function HomePage() {
   )}M ${pad2(t.seconds)}S`;
 
   return (
-    <div className='countdown-strip'>
-      <h1 className='countdown-text'>{content}</h1>
+    <div className='home-page'>
+      <div className='countdown-strip'>
+        <h1 className='countdown-text'>{content}</h1>
+      </div>
+
+      {/* New bench + SVG hover section */}
+      <BenchScene />
     </div>
   );
 }

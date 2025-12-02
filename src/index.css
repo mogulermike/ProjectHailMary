@@ -23,6 +23,8 @@ body {
 }
 
 .countdown-strip {
+  margin-top: 340px;
+  margin-bottom: 300px;
   padding: 1.2rem 2.5rem;
   border-radius: 0.4rem;
   /* background-color: #0b1f33; */
@@ -36,6 +38,12 @@ body {
   color: #ffffff;
   text-shadow: 0 0 8px rgba(227, 240, 255, 0.4);
   white-space: nowrap;
+}
+
+.home-page {
+  min-height: 190vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .app {
