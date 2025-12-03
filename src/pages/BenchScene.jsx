@@ -1,6 +1,31 @@
 // src/components/BenchScene.jsx
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { useNavigate } from 'react-router-dom';
+
+const delayedWiggle = keyframes`
+  /* idle */
+  0%,
+  70% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  /* wiggle 1 */
+  75% {
+    transform: translateY(-2px) rotate(-1deg);
+  }
+  80% {
+    transform: translateY(2px) rotate(1deg);
+  }
+
+  /* wiggle 2 */
+  85% {
+    transform: translateY(-2px) rotate(-1deg);
+  }
+  90% {
+    transform: translateY(2px) rotate(1deg);
+  }
+
+`;
 
 const BenchSceneSection = styled.section`
   margin-top: 32px;
@@ -56,19 +81,22 @@ const BenchAvatar = styled.img`
   display: block;
   width: ${({ $size }) => $size || '100px'};
   height: auto;
-  opacity: 0; /* hidden by default */
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  opacity: 0;
   pointer-events: none;
+  transform-origin: center bottom;
+  transition: opacity 0.2s ease;
 
-  /* When hovering anywhere over the bench area, show them faintly */
+  /* Hover bench → show + timed wiggle loop */
   ${BenchInner}:hover & {
-    opacity: 0.6;
+    opacity: 0.45;
+    animation: ${delayedWiggle} 2.6s ease-in-out 2;
   }
 
-  /* When hovering directly over the icon, make it fully visible */
+  /* Hover specific icon → full opacity, STOP wiggle */
   ${BenchSpot}:hover & {
     opacity: 1;
-    transform: translateY(-2px);
+    animation: none; /* stop the wiggle */
+    transform: translateY(0); /* make sure it's not mid-frame */
   }
 `;
 
