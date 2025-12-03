@@ -56,14 +56,19 @@ const BenchAvatar = styled.img`
   display: block;
   width: ${({ $size }) => $size || '100px'};
   height: auto;
-  opacity: 0;
+  opacity: 0; /* hidden by default */
   transition: opacity 0.2s ease, transform 0.2s ease;
-  //   transform: translateY(4px);
   pointer-events: none;
 
+  /* When hovering anywhere over the bench area, show them faintly */
+  ${BenchInner}:hover & {
+    opacity: 0.6;
+  }
+
+  /* When hovering directly over the icon, make it fully visible */
   ${BenchSpot}:hover & {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(-2px);
   }
 `;
 
