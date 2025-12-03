@@ -114,9 +114,10 @@ export default function AboutPage() {
         </Paragraph>
 
         <Paragraph>
-          Combine a diverse background with a willingness to DIY anything, add a
-          dash of ADHD, and you get me. A recipe for endless ideas, ambitious
-          projects, and more half-finished builds than I’d like to admit.
+          Combine a diverse background with a willingness to DIY anything, some
+          creativity and wishful thinking, and you get me. A recipe for endless
+          ideas, ambitious projects, and more half-finished builds than I’d like
+          to admit.
         </Paragraph>
 
         <Paragraph>
