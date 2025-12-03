@@ -3,28 +3,25 @@ import styled, { keyframes } from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 
 const delayedWiggle = keyframes`
-  /* idle */
   0%,
   70% {
     transform: translateY(0) rotate(0deg);
   }
-
-  /* wiggle 1 */
   75% {
     transform: translateY(-2px) rotate(-1deg);
   }
   80% {
     transform: translateY(2px) rotate(1deg);
   }
-
-  /* wiggle 2 */
   85% {
     transform: translateY(-2px) rotate(-1deg);
   }
   90% {
     transform: translateY(2px) rotate(1deg);
   }
-
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
 `;
 
 const BenchSceneSection = styled.section`
@@ -86,17 +83,24 @@ const BenchAvatar = styled.img`
   transform-origin: center bottom;
   transition: opacity 0.2s ease;
 
-  /* Hover bench → show + timed wiggle loop */
+  /* Hover bench → show faintly */
   ${BenchInner}:hover & {
-    opacity: 0.45;
-    animation: ${delayedWiggle} 2.6s ease-in-out 2;
+    opacity: 0.6;
   }
 
-  /* Hover specific icon → full opacity, STOP wiggle */
+  /* Hover specific icon → full opacity */
   ${BenchSpot}:hover & {
     opacity: 1;
-    animation: none; /* stop the wiggle */
-    transform: translateY(0); /* make sure it's not mid-frame */
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.7));
+  }
+`;
+
+const WigglyBenchAvatar = styled(BenchAvatar)`
+  animation: ${delayedWiggle} 2.6s ease-in-out 2;
+  animation-play-state: paused;
+
+  ${BenchInner}:hover & {
+    animation-play-state: running;
   }
 `;
 
@@ -113,7 +117,7 @@ export default function BenchScene() {
   const crew = [
     {
       id: 1,
-      name: 'Coffee',
+      name: 'About Me',
       svg: '/bench/Coffee.svg',
       top: '73%',
       left: '16%',
@@ -131,7 +135,7 @@ export default function BenchScene() {
     },
     {
       id: 3,
-      name: 'Phone',
+      name: 'Meet The Crew',
       svg: '/bench/Phone Without Text.svg',
       top: '79%',
       left: '84%',
@@ -157,24 +161,29 @@ export default function BenchScene() {
         <BenchImage src='/bench/missioncontrol.png' alt='Bench' />
 
         <BenchSpots>
-          {crew.map((member) => (
-            <BenchSpot
-              key={member.id}
-              style={{ top: member.top, left: member.left }}
-              aria-label={member.name}
-              title={member.name}
-              role='button'
-              tabIndex={0}
-              onClick={() => handleClick(member.path)}
-              onKeyDown={(e) => handleKeyDown(e, member.path)}
-            >
-              <BenchAvatar
-                src={member.svg}
-                alt={member.name}
-                $size={member.size}
-              />
-            </BenchSpot>
-          ))}
+          {crew.map((member) => {
+            const AvatarComponent =
+              member.id === 3 ? WigglyBenchAvatar : BenchAvatar; // only phone wiggles
+
+            return (
+              <BenchSpot
+                key={member.id}
+                style={{ top: member.top, left: member.left }}
+                aria-label={member.name}
+                title={member.name}
+                role='button'
+                tabIndex={0}
+                onClick={() => handleClick(member.path)}
+                onKeyDown={(e) => handleKeyDown(e, member.path)}
+              >
+                <AvatarComponent
+                  src={member.svg}
+                  alt={member.name}
+                  $size={member.size}
+                />
+              </BenchSpot>
+            );
+          })}
         </BenchSpots>
       </BenchInner>
     </BenchSceneSection>
