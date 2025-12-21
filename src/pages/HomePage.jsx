@@ -33,6 +33,15 @@ function pad2(value) {
   return value.toString().padStart(2, '0');
 }
 
+function Chunk({ value, unit }) {
+  return (
+    <span className='countdown-chunk'>
+      <span className='countdown-num'>{value}</span>
+      <span className='countdown-unit'>{unit}</span>
+    </span>
+  );
+}
+
 export default function HomePage() {
   const [t, setT] = useState(getTimeLeft);
 
@@ -41,17 +50,17 @@ export default function HomePage() {
     return () => clearInterval(id);
   }, []);
 
-  const content = `${pad2(t.days)}D ${pad2(t.hours)}H ${pad2(
-    t.minutes
-  )}M ${pad2(t.seconds)}S`;
-
   return (
     <div className='home-page'>
       <div className='countdown-strip'>
-        <h1 className='countdown-text'>{content}</h1>
+        <h1 className='countdown-text'>
+          <Chunk value={pad2(t.days)} unit='D' />{' '}
+          <Chunk value={pad2(t.hours)} unit='H' />{' '}
+          <Chunk value={pad2(t.minutes)} unit='M' />{' '}
+          <Chunk value={pad2(t.seconds)} unit='S' />
+        </h1>
       </div>
 
-      {/* New bench + SVG hover section */}
       <BenchScene />
     </div>
   );
