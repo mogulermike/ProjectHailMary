@@ -108,12 +108,18 @@ export default function LogentryPage() {
           I left with more questions than answers. Was that the recovered rocket
           from a mission? Could they recover all stages from the ocean? How many
           of these massive rockets did they launch? How many casualties were
-          there throughout the program? How much did the program cost? I set out
-          to find the answer to many of those questions. There are some amazing
-          resources online (I was especially impressed with this resource:
-          https://apollojournals.org/afj/index.html) – but nothing can quite
-          beat having a physical book when looking at hand written notes,
-          diagrams of rockets, pictures of missions.
+          there throughout the program? I found the answer to some of those
+          questions, and maybe I will detail them below. There are some amazing
+          resources online (I was especially impressed with this resource:{' '}
+          <a
+            href='https://apollojournals.org/afj/index.html'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            https://apollojournals.org/afj/index.html
+          </a>
+          ) – but nothing can quite beat having a physical book when looking at
+          hand written notes, diagrams of rockets, pictures of missions.
         </Paragraph>
 
         <div
@@ -129,8 +135,7 @@ export default function LogentryPage() {
               On our weekly trip to the library my 3 year old went to pretend to
               search for books at the computer, and I typed in Apollo into the
               search bar that led me to a shelf full of interesting books so I
-              grabbed a few.. My wife jokingly sent me this pic of my haul
-              asking if I got enough space books :D
+              grabbed a few..
             </Paragraph>
 
             <Paragraph>
