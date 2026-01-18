@@ -3,6 +3,7 @@ import { Routes, Route, Link } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import CrewPage from './pages/CrewPage';
 import AboutPage from './pages/AboutPage';
+import LogentryPage from './pages/LogentryPage';
 
 export default function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -63,11 +64,11 @@ export default function App() {
                   Meet The Crew
                 </Link>
               </li>
-              {/* <li>
-                <Link to='/timeline' onClick={closePanel}>
-                  Timeline
+              <li>
+                <Link to='/logentry' onClick={closePanel}>
+                  Log Entry
                 </Link>
-              </li> */}
+              </li>
               <li>
                 <Link to='/aboutme' onClick={closePanel}>
                   About Me
@@ -83,6 +84,7 @@ export default function App() {
         <Route path='/' element={<HomePage />} />
         <Route path='/crew' element={<CrewPage />} />
         <Route path='/aboutme' element={<AboutPage />} />
+        <Route path='/logentry' element={<LogentryPage />} />
       </Routes>
     </div>
   );
