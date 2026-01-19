@@ -1,6 +1,7 @@
 // src/components/BenchScene.jsx
 import styled, { keyframes } from 'styled-components';
 import { useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 const delayedWiggle = keyframes`
   0%,
@@ -110,8 +111,25 @@ const BenchImage = styled.img`
   display: block;
 `;
 
+function useIsMobile(breakpoint = 700) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia(`(max-width: ${breakpoint}px)`);
+    const onChange = () => setIsMobile(mq.matches);
+    onChange();
+    mq.addEventListener('change', onChange);
+    return () => mq.removeEventListener('change', onChange);
+  }, [breakpoint]);
+
+  return isMobile;
+}
+
 export default function BenchScene() {
+  const isMobile = useIsMobile(700);
   const navigate = useNavigate();
+
+  if (isMobile) return null;
 
   // add path for each
   const crew = [

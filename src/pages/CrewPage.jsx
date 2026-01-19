@@ -45,7 +45,7 @@ const CrewPageWrapper = styled.main`
   align-items: center;
   cccc @media (max-width: 480px) {
     padding: 300px 24px 32px;
-    min-height: 100vh;
+    min-height: 100svh;
     padding: 96px 16px 32px;
     justify-content: center;
   }

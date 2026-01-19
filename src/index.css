@@ -11,15 +11,16 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  min-height: 100vh;
+  min-height: 100svh;
   background-color: #000;
 }
 
 .app {
-  min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .countdown-strip {
@@ -44,25 +45,20 @@ body {
 }
 
 .home-page {
-  min-height: 190vh;
+  min-height: 100svh;
   display: flex;
   flex-direction: column;
-}
-
-.app {
-  position: relative;
-  min-height: 100vh;
+  overflow: hidden;
 }
 
 /* Base header for all screens */
 .app-header {
   position: fixed;
   top: 34px;
-  right: 90px;
+  right: 70px;
   z-index: 1100;
 }
 
-/* Icon is just the SVG, clickable */
 .app-header-icon {
   border: none;
   background: transparent;
@@ -73,7 +69,6 @@ body {
   padding: 0;
 }
 
-/* Base icon: white */
 .app-header-icon img {
   width: 50px;
   height: 50px;
@@ -183,10 +178,14 @@ body {
     padding: 12px 18px;
   }
   .nav-list a {
-    font-size: 0.8rem; /* smaller link text */
+    font-size: 0.8rem;
   }
 
-  /* Icon is just the SVG, clickable */
+  .app-header {
+    right: 20px;
+    top: 10px;
+  }
+
   .app-header-icon {
     border: none;
     background: transparent;
@@ -197,12 +196,18 @@ body {
     padding: 0;
   }
 
-  /* Base icon: white */
   .app-header-icon img {
     width: 40px;
     height: 40px;
     display: block;
     filter: brightness(0) invert(1);
     transition: filter 0.15s ease;
+  }
+
+  .home-page {
+    height: 100svh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
   }
 }
