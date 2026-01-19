@@ -4,7 +4,8 @@ import styled, { css } from 'styled-components';
 const LogentryPageWrapper = styled.main`
   min-height: 40vh;
   padding: 80px 24px 48px;
-
+  overflow-x: hidden;
+  width: 100%;
   font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, Helvetica, Arial, sans-serif;
 
@@ -15,7 +16,7 @@ const LogentryPageWrapper = styled.main`
 
 /* Cards stack + 30px separation */
 const PostsStack = styled.div`
-  width: 100%;
+  width: min(840px, 100%)
   max-width: 840px;
   display: flex;
   flex-direction: column;
@@ -29,6 +30,8 @@ const LogEntryCard = styled.section`
 
   border-radius: 16px;
   padding: 24px 20px 28px;
+  box-sizing: border-box;
+  margin: 0 auto;
 
   /* mostly clear background + thin border */
   background: rgba(0, 0, 0, 0.28);
@@ -96,7 +99,7 @@ const PageTitle = styled.h1`
 
   @media (max-width: 480px) {
     font-size: clamp(1.6rem, 5vw, 3rem);
-    margin-top: 10px;
+    margin: -20px 0 60px 0;
   }
 `;
 
