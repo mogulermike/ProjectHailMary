@@ -16,7 +16,7 @@ const LogentryPageWrapper = styled.main`
 
 /* Cards stack + 30px separation */
 const PostsStack = styled.div`
-  width: min(840px, 100%)
+  width: 100%;
   max-width: 840px;
   display: flex;
   flex-direction: column;
