@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage';
 import CrewPage from './pages/CrewPage';
 import AboutPage from './pages/AboutPage';
 import LogentryPage from './pages/LogentryPage';
+import EquationsPage from './pages/EquationsPage';
 
 export default function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -74,6 +75,11 @@ export default function App() {
                   About Me
                 </Link>
               </li>
+              <li>
+                <Link to='/equations' onClick={closePanel}>
+                  Equations
+                </Link>
+              </li>
             </ul>
           </nav>
         </aside>
@@ -85,6 +91,7 @@ export default function App() {
         <Route path='/crew' element={<CrewPage />} />
         <Route path='/aboutme' element={<AboutPage />} />
         <Route path='/logentry' element={<LogentryPage />} />
+        <Route path='/equations' element={<EquationsPage />} />
       </Routes>
     </div>
   );

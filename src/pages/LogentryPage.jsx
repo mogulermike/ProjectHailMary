@@ -17,7 +17,7 @@ const LogentryPageWrapper = styled.main`
 /* Cards stack + 30px separation */
 const PostsStack = styled.div`
   width: 100%;
-  max-width: 840px;
+  max-width: 900px;
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -29,19 +29,18 @@ const LogEntryCard = styled.section`
   text-align: left;
 
   border-radius: 16px;
-  padding: 24px 20px 28px;
+  padding: 24px 40px 28px;
   box-sizing: border-box;
   margin: 0 auto;
 
-  /* mostly clear background + thin border */
   background: rgba(0, 0, 0, 0.28);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  border: 2px solid rgba(255, 255, 255, 0.14);
   backdrop-filter: blur(10px);
 
   transition: border-color 0.2s ease, background 0.2s ease;
 
   &:hover {
-    border-color: rgba(255, 255, 255, 0.22);
+    border-color: rgba(253, 231, 108, 0.95);
     background: rgba(0, 0, 0, 0.33);
   }
 
@@ -94,7 +93,7 @@ const PageTitle = styled.h1`
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  margin: 0 0 10px 0;
+  margin: 60px 0 100px 0;
   color: white;
 
   @media (max-width: 480px) {
@@ -358,7 +357,7 @@ const BodyClamp = styled.div`
   ${({ $collapsed }) =>
     $collapsed
       ? css`
-          max-height: 200px;
+          max-height: 140px;
           overflow: hidden;
           position: relative;
 
