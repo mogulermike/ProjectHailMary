@@ -1,38 +1,47 @@
+import styled from 'styled-components';
+
 export default function UnderConstruction() {
   return (
-    <main style={styles.wrapper}>
-      <img src='/images/astronaut.PNG' alt='mowing' style={styles.image} />
-      <h1 style={styles.title}>Under Construction</h1>
-    </main>
+    <Wrapper>
+      <Image src='/images/astronaut.PNG' alt='mowing' />
+      <Title>Under Construction</Title>
+    </Wrapper>
   );
 }
 
-const styles = {
-  wrapper: {
-    color: '#ffffffff',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    textAlign: 'center',
-  },
-  image: {
-    width: 'auto',
-    maxWidth: '100%',
-    height: '400px',
-    marginBottom: '80px',
-  },
-  title: {
-    fontFamily: "'Space Mono', monospace",
-    fontSize: '3rem',
-    fontWeight: 400,
-    letterSpacing: '0.14em',
-    margin: 0,
-    textTransform: 'uppercase',
-  },
-  subtitle: {
-    fontSize: '0.95rem',
-    opacity: 0.7,
-    margin: 0,
-  },
-};
+const Wrapper = styled.main`
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+  margin-top: 100px;
+`;
+
+const Image = styled.img`
+  width: auto;
+  max-width: 100%;
+  height: 400px;
+  margin-bottom: 80px;
+
+  @media (max-width: 768px) {
+    height: 260px;
+    margin-bottom: 48px;
+  }
+`;
+
+const Title = styled.h1`
+  font-family: 'Space Mono', monospace;
+  font-size: 3rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  margin: 0;
+  text-transform: uppercase;
+
+  @media (max-width: 768px) {
+    font-size: 2.2rem;
+    letter-spacing: 0.1em;
+  }
+`;
