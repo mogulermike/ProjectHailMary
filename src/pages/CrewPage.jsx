@@ -22,7 +22,8 @@ const crewMembers = [
     name: 'Olesya Ilyukhina',
     role: 'Flight Engineer',
     image: '/CastImages/1.PNG',
-    blurb: 'Responsible for overall mission success and crew safety.',
+    blurb:
+      'Responsible for overall mission success and crew safety.\nFun Fact: Milana Vayntrub voices Squirrel Girl in Marvel Rivals.',
   },
   {
     id: 2,

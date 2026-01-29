@@ -32,27 +32,39 @@ const AboutCard = styled.section`
 `;
 
 const Greeting = styled.p`
-  margin: 0 0 4px;
   font-size: 2rem;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
   margin-bottom: 70px;
+
+  span {
+    display: block;
+  }
 `;
 
 const AboutTitle = styled.h1`
-  margin: 0;
-  font-size: 2rem;
-  font-weight: 700;
   display: flex;
   justify-content: center;
+  text-align: center;
   width: 100%;
-  margin-bottom: 60px;
+
+  font-size: clamp(2.5rem, 5vw, 3.25rem);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: white;
+
+  @media (max-width: 480px) {
+    font-size: clamp(1.6rem, 5vw, 3rem);
+    margin: -20px 0 60px 0;
+  }
 `;
 
 const Handle = styled.p`
   margin: 4px 0 16px;
-  font-size: 1rem;
+  font-size: 1.2rem;
   opacity: 0.85;
 `;
 
@@ -64,7 +76,7 @@ const Paragraph = styled.p`
 `;
 
 const QuoteBlock = styled.figure`
-  margin: 24px auto 0;
+  margin: 10px auto 0;
   padding: 12px 16px;
   max-width: 400px;
   border-left: 3px solid rgba(253, 231, 108, 0.9);
@@ -89,12 +101,122 @@ const QuoteAuthor = styled.figcaption`
   text-align: right;
 `;
 
+const TwoCol = styled.div`
+  display: flex;
+  gap: 24px;
+  align-items: center;
+
+  @media (max-width: 700px) {
+    flex-direction: column;
+    gap: 16px;
+  }
+`;
+
+const LeftCol = styled.div`
+  flex: 1;
+  min-width: 0;
+`;
+
+const RightCol = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+
+  @media (max-width: 700px) {
+    width: 100%;
+    align-items: center;
+  }
+`;
+
+const Avatar = styled.img`
+  width: 200px;
+  height: 200px;
+  border-radius: 999px;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 10px;
+
+  /* subtle ring */
+  border: 2px solid rgba(255, 255, 255, 0.18);
+`;
+
+const EmailLink = styled.a`
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-size: 0.95rem;
+  line-height: 1.2;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
+const SocialLink = styled.a`
+  margin-top: 6px;
+  color: rgba(140, 200, 255, 0.95);
+  text-decoration: none;
+  font-size: 0.95rem;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
+const BottomTwoCol = styled.div`
+  display: grid;
+  grid-template-columns: 1.6fr 2fr;
+  gap: 32px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+`;
+
+const BottomLeft = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+`;
+
+const BottomRight = styled.div`
+  display: flex;
+  align-items: flex-start;
+`;
+
 export default function AboutPage() {
   return (
     <AboutPageWrapper>
       <AboutCard>
-        <AboutTitle>About Me</AboutTitle>
-        <Greeting>Hey everyone! Welcome to my page.</Greeting>
+        <TwoCol>
+          <LeftCol>
+            <AboutTitle>About Me</AboutTitle>
+            <Greeting>
+              <span>Hey Everyone!</span>
+              <span>Welcome to my page.</span>
+            </Greeting>
+          </LeftCol>
+
+          <RightCol>
+            <Avatar
+              src='/images/Profile.PNG' // <- swap to your image path
+              alt='Profile'
+              loading='lazy'
+            />
+            <EmailLink href='mailto:mogulermike@gmail.com'>
+              MogulerMike@gmail.com
+            </EmailLink>
+
+            <SocialLink
+              href='https://www.linkedin.com/in/michael-manning-201206b6/'
+              target='_blank'
+              rel='noreferrer'
+            >
+              LinkedIn
+            </SocialLink>
+          </RightCol>
+        </TwoCol>
 
         <Paragraph>
           My goal is to make occasional updates to this website, but life with 3
@@ -120,23 +242,29 @@ export default function AboutPage() {
           to admit.
         </Paragraph>
 
-        <Paragraph>
-          Stick around, and I hope I can inspire you to create something you are
-          proud of.
-        </Paragraph>
+        <BottomTwoCol>
+          <BottomLeft>
+            <Paragraph>
+              Stick around, and I hope I can inspire you to create something you
+              are proud of.
+            </Paragraph>
 
-        <Handle>
-          <strong>- Moguler Mike</strong>
-        </Handle>
+            <Handle>
+              <strong>- Moguler Mike</strong>
+            </Handle>
+          </BottomLeft>
 
-        <QuoteBlock>
-          <QuoteText>
-            “The creative adult
-            <br />
-            is the child who survived.”
-          </QuoteText>
-          <QuoteAuthor>― Ursula K. Le Guin</QuoteAuthor>
-        </QuoteBlock>
+          <BottomRight>
+            <QuoteBlock>
+              <QuoteText>
+                “The creative adult
+                <br />
+                is the child who survived.”
+              </QuoteText>
+              <QuoteAuthor>― Ursula K. Le Guin</QuoteAuthor>
+            </QuoteBlock>
+          </BottomRight>
+        </BottomTwoCol>
       </AboutCard>
     </AboutPageWrapper>
   );
