@@ -42,6 +42,11 @@ const Greeting = styled.p`
   span {
     display: block;
   }
+
+  @media (max-width: 480px) {
+    font-size: clamp(1.6rem, 5vw, 3rem);
+    margin: -20px 0 20px 0;
+  }
 `;
 
 const AboutTitle = styled.h1`
@@ -108,7 +113,7 @@ const TwoCol = styled.div`
 
   @media (max-width: 700px) {
     flex-direction: column;
-    gap: 16px;
+    margin: 24px 0 16px; /* 👈 tighten */
   }
 `;
 
